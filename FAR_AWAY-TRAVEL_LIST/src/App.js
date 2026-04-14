@@ -1,10 +1,13 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { useState } from "react";
 
 function App() {
   const [initialItems, setInitialItems] = useState([]);
-
+  const clearAll = function () {
+    let confirm = window.confirm("Do you want to clear the list?");
+    console.log(confirm);
+    if (confirm) setInitialItems([]);
+  };
   const addItem = (newItem) => {
     setInitialItems((initialItems) => [...initialItems, newItem]);
   };
@@ -28,6 +31,7 @@ function App() {
         initialItems={initialItems}
         deleteItem={deleteItem}
         handleToggle={handleToggle}
+        clearAll={clearAll}
       />
       <Footer items={initialItems} />
     </div>
@@ -88,7 +92,7 @@ function Form({ addItem }) {
     </div>
   );
 }
-function ItemList({ initialItems, deleteItem, handleToggle }) {
+function ItemList({ initialItems, deleteItem, handleToggle, clearAll }) {
   const [sortBy, setSortBy] = useState("input");
   let sortedItems;
   if (sortBy === "input") sortedItems = initialItems;
@@ -114,8 +118,8 @@ function ItemList({ initialItems, deleteItem, handleToggle }) {
           />
         ))}
       </ul>
-      <div>
-        <form className="sort">
+      <div className="sort">
+        <form>
           <select
             name="sort"
             value={sortBy}
@@ -131,8 +135,10 @@ function ItemList({ initialItems, deleteItem, handleToggle }) {
               Packed Status
             </option>
           </select>
-          <button className="clearbutton">Clear All</button>
         </form>
+        <button className="clearbutton" onClick={clearAll}>
+          Clear All
+        </button>
       </div>
     </div>
   );
