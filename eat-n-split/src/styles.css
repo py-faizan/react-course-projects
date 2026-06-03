@@ -1,0 +1,113 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.main-container {
+  width: 60vw;
+  margin: 10vh auto;
+  display: flex;
+  gap: 30px;
+}
+.profile-list {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.profile {
+  padding: 15px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 10px;
+  align-items: center;
+  border-radius: 5px;
+}
+.profile:hover {
+  background-color: rgb(254, 242, 224);
+}
+
+.status-green {
+  color: green;
+}
+
+.status-red {
+  color: red;
+}
+.profile img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.name-div {
+  display: flex;
+  flex-direction: column;
+}
+.select-button,
+.addimage-button,
+.addfriend-button,
+.split-bill-button {
+  background-color: rgb(253, 159, 65);
+  color: black;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  cursor: pointer;
+}
+.addimage-button {
+  padding: 10px 80px;
+}
+
+.addimage-div,
+.splitter-div {
+  width: 400px;
+  padding: 15px;
+  background-color: rgb(254, 242, 224);
+
+  display: flex;
+  flex-direction: column;
+}
+.addimage-div form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.form-row input {
+  padding: 7px;
+  border: none;
+  outline: none;
+}
+
+.split-bill-button,
+.addimage-button,
+.addfriend-button {
+  align-self: flex-end;
+  margin-top: 10px;
+}
+.addfriend-button {
+  margin-right: 15px;
+}
+
+.splitter-div {
+  padding: 50px 15px;
+}
+.splitter-div input,
+.splitter-div select {
+  width: 80px;
+}
+.splitter-div select {
+  padding: 5px;
+  outline: none;
+  border: none;
+}
